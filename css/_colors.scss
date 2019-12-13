@@ -1,0 +1,46 @@
+@import "./mixins";
+
+$colors: (
+    myblue: #3d88b5,
+    mydarkblue: #155679,
+    mygrey: #e8eff7,
+    mydarkgrey: #d2e1ee,
+    white: #fff,
+    hoverblue: #244c64
+);
+
+@function color($color-name) {
+    @return map-get($colors, $color-name);
+};
+
+
+.bg-mygrey {
+    background: color(mygrey);
+}
+
+.bg-myblue {
+    background: color(myblue);
+}
+
+.bg-mydarkblue {
+    background: color(mydarkblue);
+}
+
+.text-myblue {
+    color: color(myblue);
+}
+
+.btn-myblue {
+    color: color(white);
+    background-color: color(myblue);
+    border-color: color(myblue);
+
+    @include desktop {
+        &:hover {
+            color: color(white);
+            background-color: color(hoverblue);
+            border-color: color(myblue);
+        }
+    }
+}
+

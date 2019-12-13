@@ -1,0 +1,47 @@
+@mixin whiteBackground {
+    background-color: color(white);
+    color: color(myblue);
+};
+
+@mixin header {
+    text-align: center;
+    font-size: 1.7rem;
+    font-weight: 500;
+    margin-bottom: 2rem;
+    margin-top: 3rem;
+
+    @include tablet {
+        font-size: 2rem;
+        font-weight: 600;
+    }
+
+    @include desktop {
+        font-size: 3rem;    
+        margin-bottom: 3.2rem;    
+    }
+};
+
+
+@mixin smallDevice {
+    @media(min-width: #{$smallDevice}) {
+        @content
+    }
+};
+
+@mixin tablet {
+    @media(min-width: #{$tablet}) {
+        @content
+    }
+};
+
+@mixin desktop {
+    @media(min-width: #{$desktop}) {
+        @content
+    }
+};
+
+@mixin largeDesktop {
+    @media(min-width: #{$largeDesktop}) {
+        @content
+    }
+};
